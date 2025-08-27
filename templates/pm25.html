@@ -9,7 +9,26 @@
 
 <body>
     <h1>PM2.5數據列表</h1>
-    {{ocntent}}
+    <table border="1">
+        <thead>
+            <tr>
+                {% for col in columns %}
+                <th>{{col}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in values %}
+            <tr>
+                {% for data in value %}
+                <td>{{data}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {{columns}}
+    {{values}}
 </body>
 
 </html>
